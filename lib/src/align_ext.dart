@@ -9,35 +9,37 @@ extension AlignmentExt on Widget {
       );
 
   // 中心
-  Center centerized() => Center(child: this);
+  Center centerized({Key key}) => Center(key: key, child: this);
 }
 
 extension Sized on Widget {
   Widget sized({Size to, Key key}) {
     if (to == null) return this;
-    return SizedBox(key: key, width: to.width, height: to.height, child: this,);
+    return SizedBox(
+      key: key,
+      width: to.width,
+      height: to.height,
+      child: this,
+    );
   }
 }
 
 extension Containered on Widget {
-  Widget inContainer({Key key, Decoration decoration, Color color}) {
-    return Container(
-      key: key,
-      decoration: decoration,
-      color: color,
-      child: this,
-    );
-  }
+  Widget inContainer({Key key, Decoration decoration, Color color}) =>
+      Container(
+        key: key,
+        decoration: decoration,
+        color: color,
+        child: this,
+      );
 }
 
 extension PositionExt on Widget {
-  Padding paddingBy({EdgeInsetsGeometry padding, Key key}) {
-    return Padding(
-      key: key,
-      padding: padding,
-      child: this,
-    );
-  }
+  Padding paddingBy({EdgeInsetsGeometry padding, Key key}) => Padding(
+        key: key,
+        padding: padding,
+        child: this,
+      );
 
   Positioned positionedBy({
     double left,
@@ -46,14 +48,13 @@ extension PositionExt on Widget {
     double bottom,
     double width,
     double height,
-  }) {
-    return Positioned(
-        left: left,
-        top: top,
-        right: right,
-        bottom: bottom,
-        width: width,
-        height: height,
-        child: this);
-  }
+  }) =>
+      Positioned(
+          left: left,
+          top: top,
+          right: right,
+          bottom: bottom,
+          width: width,
+          height: height,
+          child: this);
 }
