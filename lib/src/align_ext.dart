@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 extension AlignmentExt on Widget {
   // 对齐
-  Align align({AlignmentGeometry by = Alignment.center, Key? key}) => Align(
+  Widget align({AlignmentGeometry by = Alignment.center, Key? key}) => Align(
         alignment: by,
         key: key,
         child: this,
       );
 
   // 中心
-  Center centerized({Key? key}) => Center(key: key, child: this);
+  Widget centerized({Key? key}) => Center(key: key, child: this);
 }
 
 extension Sized on Widget {
@@ -34,7 +34,7 @@ extension Containered on Widget {
 }
 
 extension PositionExt on Widget {
-  Padding paddingBy({required EdgeInsetsGeometry padding, Key? key}) => Padding(
+  Widget paddingBy({required EdgeInsetsGeometry padding, Key? key}) => Padding(
         key: key,
         padding: padding,
         child: this,
