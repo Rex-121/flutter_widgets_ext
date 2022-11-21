@@ -57,3 +57,10 @@ extension PositionExt on Widget {
           height: height,
           child: this);
 }
+
+
+extension StackExt on Widget {
+  Widget expanded({ Key? key, int flex = 1}) {
+    return Expanded(key: key, child: this, flex: flex);
+  }
+}
